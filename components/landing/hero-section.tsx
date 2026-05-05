@@ -5,31 +5,33 @@ import { GlassCard } from "@/components/effects/glass-card"
 import { Button } from "@/components/ui/button"
 import { Shield, ChevronRight, Zap } from "lucide-react"
 
-// Note: Image import kept for product-main.png usage below
-
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden noise">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background - Desktop */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+      >
+        <source src="/videos/restless-hero-desktop.webm" type="video/webm" />
+      </video>
       
-      {/* Animated Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(oklch(0.65 0.18 145 / 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, oklch(0.65 0.18 145 / 0.3) 1px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
-          }}
-        />
-      </div>
-
-      {/* Glow Effects */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[128px] animate-pulse" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/10 rounded-full blur-[128px] animate-pulse" style={{ animationDelay: '1s' }} />
+      {/* Video Background - Mobile */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover md:hidden"
+      >
+        <source src="/videos/restless-hero-mobile.webm" type="video/webm" />
+      </video>
+      
+      {/* Overlay for text readability */}
+      <div className="absolute inset-0 bg-background/40" />
 
       <div className="container mx-auto px-4 lg:px-8 pt-24 pb-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
