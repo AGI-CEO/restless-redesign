@@ -5,20 +5,13 @@ import { GlassCard } from "@/components/effects/glass-card"
 import { Button } from "@/components/ui/button"
 import { Shield, ChevronRight, Zap } from "lucide-react"
 
+// Note: Image import kept for product-main.png usage below
+
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden noise">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-tactical-bg.jpg"
-          alt=""
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/80 to-background/60" />
-      </div>
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30" />
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
