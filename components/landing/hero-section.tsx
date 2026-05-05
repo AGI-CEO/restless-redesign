@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Button } from "@/components/ui/button"
 import { Shield, ChevronRight, Zap } from "lucide-react"
@@ -7,8 +8,17 @@ import { Shield, ChevronRight, Zap } from "lucide-react"
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden noise">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-tactical-bg.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/80 to-background/60" />
+      </div>
       
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
@@ -92,26 +102,27 @@ export function HeroSection() {
             <GlassCard 
               variant="strong" 
               shimmer 
-              className="relative p-8 lg:p-12 aspect-square max-w-md w-full"
+              className="relative p-6 lg:p-10 max-w-md w-full"
             >
               {/* Product Glow */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-48 h-48 lg:w-64 lg:h-64 bg-primary/20 rounded-full blur-[64px]" />
+                <div className="w-48 h-48 lg:w-72 lg:h-72 bg-primary/20 rounded-full blur-[64px]" />
               </div>
               
-              {/* Product Placeholder */}
-              <div className="relative flex flex-col items-center justify-center h-full gap-6">
-                <div className="w-32 h-48 lg:w-40 lg:h-60 rounded-lg bg-gradient-to-b from-muted to-card border border-glass-border flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-primary/20 flex items-center justify-center mb-3">
-                      <Zap className="w-8 h-8 text-primary" />
-                    </div>
-                    <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Product</span>
-                  </div>
+              {/* Product Image */}
+              <div className="relative flex flex-col items-center justify-center gap-6">
+                <div className="relative w-48 h-64 lg:w-64 lg:h-80 transition-transform duration-500 hover:scale-105">
+                  <Image
+                    src="/images/product-main.png"
+                    alt="RESTLESS Performance Energy Blend - Berry Lemonade"
+                    fill
+                    className="object-contain drop-shadow-2xl"
+                    priority
+                  />
                 </div>
                 
                 {/* Floating Stats */}
-                <div className="flex gap-4">
+                <div className="flex gap-4 lg:gap-6">
                   {[
                     { label: "Servings", value: "30" },
                     { label: "Caffeine", value: "0mg" },

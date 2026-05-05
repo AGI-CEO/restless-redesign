@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Shield, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -7,8 +8,16 @@ import { Button } from "@/components/ui/button"
 export function GuaranteeBanner() {
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/training-scene.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-25"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background" />
+      </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <GlassCard 

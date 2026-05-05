@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/landing/navigation"
 import { HeroSection } from "@/components/landing/hero-section"
 import { BenefitsGrid } from "@/components/landing/benefits-grid"
+import { LifestyleSection } from "@/components/landing/lifestyle-section"
 import { IngredientsSection } from "@/components/landing/ingredients-section"
 import { TestimonialsCarousel } from "@/components/landing/testimonials-carousel"
 import { GuaranteeBanner } from "@/components/landing/guarantee-banner"
@@ -13,6 +14,7 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <BenefitsGrid />
+      <LifestyleSection />
       <IngredientsSection />
       <TestimonialsCarousel />
       <GuaranteeBanner />

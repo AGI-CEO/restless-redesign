@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Droplets, Brain, Leaf, Pill, Activity, Sparkles } from "lucide-react"
 
@@ -63,6 +64,17 @@ const ingredients = [
 export function IngredientsSection() {
   return (
     <section id="ingredients" className="relative py-24 lg:py-32 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/ingredients-scatter.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+      </div>
+      
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div 

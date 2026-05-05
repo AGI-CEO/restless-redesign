@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -68,8 +69,16 @@ export function TestimonialsCarousel() {
 
   return (
     <section id="reviews" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/testimonial-bg.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+      </div>
       
       {/* Glow Effects */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[128px]" />
