@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Button } from "@/components/ui/button"
 import { Shield, ChevronRight, Zap } from "lucide-react"
@@ -87,39 +86,53 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Product Visual */}
+          {/* Descriptive Text Panel */}
           <div className="relative flex items-center justify-center lg:justify-end">
             <GlassCard 
               variant="strong" 
               shimmer 
-              className="relative p-6 lg:p-10 max-w-md w-full"
+              className="relative p-8 lg:p-10 max-w-lg w-full"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)',
+              }}
             >
-              {/* Product Glow */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-48 h-48 lg:w-72 lg:h-72 bg-primary/20 rounded-full blur-[64px]" />
-              </div>
+              {/* Liquid glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-transparent to-secondary/10 rounded-2xl blur-xl opacity-60" />
               
-              {/* Product Image */}
-              <div className="relative flex flex-col items-center justify-center gap-6">
-                <div className="relative w-48 h-64 lg:w-64 lg:h-80 transition-transform duration-500 hover:scale-105">
-                  <Image
-                    src="/images/product-main.png"
-                    alt="RESTLESS Performance Energy Blend - Berry Lemonade"
-                    fill
-                    className="object-contain drop-shadow-2xl"
-                    priority
-                  />
+              <div className="relative flex flex-col gap-6">
+                {/* Section Label */}
+                <span className="text-xs font-mono font-semibold tracking-widest text-primary uppercase">
+                  Performance Energy Blend
+                </span>
+                
+                {/* Feature List */}
+                <div className="flex flex-col gap-5">
+                  {[
+                    { title: "Jitter-Free Energy", desc: "Clean caffeine + L-Theanine for smooth, sustained focus without the crash" },
+                    { title: "1,000mg Electrolytes", desc: "Sodium, potassium, calcium & magnesium for superior hydration" },
+                    { title: "23 Vitamins & Minerals", desc: "Full-spectrum B vitamins, D3+K2, and essential trace minerals" },
+                    { title: "Zero Sugar, 5 Calories", desc: "All the performance, none of the junk" },
+                  ].map((feature, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      <div className="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-primary" />
+                      <div>
+                        <h3 className="text-base font-semibold text-foreground mb-1">{feature.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
                 
-                {/* Floating Stats */}
-                <div className="flex gap-4 lg:gap-6">
+                {/* Stats Row */}
+                <div className="flex justify-between pt-4 mt-2 border-t border-glass-border">
                   {[
                     { label: "Servings", value: "30" },
-                    { label: "Caffeine", value: "0mg" },
+                    { label: "Caffeine", value: "120mg" },
                     { label: "Calories", value: "5" },
                   ].map((stat) => (
                     <div key={stat.label} className="text-center">
-                      <p className="text-lg lg:text-xl font-bold text-foreground">{stat.value}</p>
+                      <p className="text-xl lg:text-2xl font-bold text-foreground">{stat.value}</p>
                       <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-wider">{stat.label}</p>
                     </div>
                   ))}
