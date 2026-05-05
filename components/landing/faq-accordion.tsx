@@ -3,36 +3,29 @@
 import { useState } from "react"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Plus, Minus } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 const faqs = [
   {
-    question: "What makes RESTLESS different from other energy drinks?",
-    answer: "RESTLESS is specifically formulated for high-performance professionals who need sustained energy without the crash. Unlike traditional energy drinks, we use zero caffeine and zero sugar. Our blend focuses on electrolytes, nootropics, and adaptogens for clean, steady energy that supports both physical and cognitive performance.",
+    question: "What makes Restless different from energy drinks?",
+    answer: "Unlike traditional energy drinks loaded with sugar and artificial ingredients, Restless provides clean, steady energy with 120mg of naturally-derived caffeine from green tea, paired with L-Theanine at a 2:1 ratio for zero jitters and no crash. Plus, you get 1000mg electrolytes, nootropics, and 23 vitamins and minerals in every serving.",
   },
   {
-    question: "Is RESTLESS safe for daily use?",
-    answer: "Absolutely. Our formula is designed for daily use and contains no stimulants that could cause dependency. All ingredients are thoroughly tested and third-party verified for safety. We recommend one serving per shift or as needed for sustained performance.",
+    question: "Does Restless offer Discounts?",
+    answer: "Yes! We offer Military Discounts, First Responder Discounts, and Student Discounts. Subscribe and save 40% on your first order and 36% on all recurring orders. Plus, get 15% off your first order when you sign up.",
   },
   {
-    question: "How quickly does RESTLESS work?",
-    answer: "Most users report feeling the effects within 15-30 minutes of consumption. The electrolytes provide immediate hydration support, while the nootropic blend builds sustained focus over time. Unlike caffeine-based products, there's no spike and crash cycle.",
+    question: "What's included in subscription?",
+    answer: "With a subscription you get 40% off your first order, 36% off all recurring orders, FREE shipping always, and the flexibility to pause, skip, or cancel anytime. Delivery every 30 days keeps you stocked and in the fight.",
   },
   {
-    question: "Can I take RESTLESS with other supplements or medications?",
-    answer: "While RESTLESS contains only natural ingredients, we always recommend consulting with your healthcare provider before combining with other supplements or medications, especially if you have any pre-existing conditions or are pregnant/nursing.",
+    question: "How can I be sure Restless is safe?",
+    answer: "Restless is Informed Sport Certified, meaning every batch is tested for over 250 substances banned in sport. We use transparent labeling with no proprietary blends, are third-party lab tested, and made in the USA in a GMP-certified facility.",
   },
   {
-    question: "What does the 100-day guarantee cover?",
-    answer: "Our guarantee is simple: if you're not completely satisfied with your results for any reason within 100 days of purchase, contact us for a full refund. No questions asked, no hoops to jump through. We'll even cover return shipping.",
-  },
-  {
-    question: "Is RESTLESS tested for banned substances?",
-    answer: "Yes. RESTLESS is Informed Sport certified, meaning every batch is tested for over 250 substances banned in sport. This makes it safe for professional athletes, military personnel, and anyone subject to drug testing.",
-  },
-  {
-    question: "How should I store RESTLESS?",
-    answer: "Store in a cool, dry place away from direct sunlight. Once mixed, we recommend consuming within 24 hours for optimal freshness and effectiveness. The powder form has a shelf life of 2 years when stored properly.",
+    question: "How does the 100-day guarantee work?",
+    answer: "Simple: if you don't feel it, you don't pay for it. Restless will keep you in the fight—you'll feel stronger, sharper, and more resilient. If not, we'll refund your purchase in full. No return required. No questions asked.",
   },
 ]
 
@@ -48,14 +41,11 @@ export function FAQAccordion() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block font-mono text-xs tracking-widest text-primary uppercase mb-4">
-            Questions & Answers
+            Get Started
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-            FREQUENTLY <span className="text-gradient">ASKED</span>
+            COMMON <span className="text-gradient">QUESTIONS</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Everything you need to know about RESTLESS and how it can support your performance.
-          </p>
         </div>
 
         {/* FAQ Items */}
@@ -111,16 +101,12 @@ export function FAQAccordion() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Still have questions? We&apos;re here to help.
-          </p>
-          <a 
-            href="#contact" 
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
+          <Button 
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider px-8 py-6 text-base"
           >
-            Contact Support
-            <span className="text-lg">&rarr;</span>
-          </a>
+            Try Now
+          </Button>
         </div>
       </div>
     </section>

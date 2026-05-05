@@ -1,63 +1,72 @@
 "use client"
 
 import { GlassCard } from "@/components/effects/glass-card"
-import { Droplets, Brain, Leaf, Pill, Activity, Sparkles } from "lucide-react"
+import { Leaf, Brain, Droplets, Activity, Pill, Sparkles } from "lucide-react"
 
 const ingredients = [
   {
-    icon: Droplets,
-    title: "ELECTROLYTES",
-    amount: "1000mg",
-    description: "Sodium, potassium, and magnesium for optimal hydration and muscle function.",
-    color: "text-blue-400",
-    bgColor: "bg-blue-400/10",
-    borderColor: "border-blue-400/20",
-  },
-  {
-    icon: Brain,
-    title: "NOOTROPICS",
-    amount: "Premium Blend",
-    description: "Alpha-GPC, L-Theanine, and more for enhanced cognitive performance.",
-    color: "text-primary",
-    bgColor: "bg-primary/10",
-    borderColor: "border-primary/20",
-  },
-  {
     icon: Leaf,
-    title: "ANTIOXIDANTS",
-    amount: "Full Spectrum",
-    description: "Vitamin C, E, and plant extracts to combat oxidative stress.",
+    title: "Caffeine",
+    amount: "120mg / Serving",
+    description: "Naturally derived from green tea leaf extract, delivering clean, sustained energy alongside powerful antioxidants that support cellular health.",
     color: "text-emerald-400",
     bgColor: "bg-emerald-400/10",
     borderColor: "border-emerald-400/20",
   },
   {
+    icon: Brain,
+    title: "L-Theanine",
+    amount: "240mg / Serving",
+    description: "Paired with caffeine at a 2:1 ratio for zero brain fog and no jitters or crash.",
+    color: "text-primary",
+    bgColor: "bg-primary/10",
+    borderColor: "border-primary/20",
+  },
+  {
+    icon: Sparkles,
+    title: "Rhodiola Rosea",
+    amount: "100mg / Serving",
+    description: "Adaptogen clinically shown to reduce mental and physical fatigue under high-stress conditions.",
+    color: "text-amber-400",
+    bgColor: "bg-amber-400/10",
+    borderColor: "border-amber-400/20",
+  },
+  {
+    icon: Droplets,
+    title: "Electrolytes",
+    amount: "1000mg / Serving",
+    description: "Sodium, potassium, calcium, and magnesium blend formulated for sustained hydration in demanding environments.",
+    color: "text-blue-400",
+    bgColor: "bg-blue-400/10",
+    borderColor: "border-blue-400/20",
+  },
+  {
     icon: Pill,
-    title: "B-VITAMINS",
-    amount: "Complete Complex",
-    description: "B6, B12, and more for energy metabolism and nervous system support.",
+    title: "Magnesium Bisglycinate",
+    amount: "200mg / Serving",
+    description: "Highly bioavailable form for muscle recovery and stress response.",
     color: "text-secondary",
     bgColor: "bg-secondary/10",
     borderColor: "border-secondary/20",
   },
   {
     icon: Activity,
-    title: "STEADY FLOW",
-    amount: "No Crash Formula",
-    description: "Zero caffeine, zero sugar. Sustained energy without the spike and crash.",
+    title: "Beetroot Powder",
+    amount: "3g / Serving",
+    description: "Natural nitrate source improves cardiovascular efficiency and endurance during high-output efforts.",
     color: "text-rose-400",
     bgColor: "bg-rose-400/10",
     borderColor: "border-rose-400/20",
   },
-  {
-    icon: Sparkles,
-    title: "ADAPTOGENS",
-    amount: "Stress Support",
-    description: "Natural compounds to help your body adapt to physical and mental stress.",
-    color: "text-amber-400",
-    bgColor: "bg-amber-400/10",
-    borderColor: "border-amber-400/20",
-  },
+]
+
+const additionalIngredients = [
+  { name: "Ginger", amount: "50mg", desc: "Anti-inflammatory for digestion and recovery" },
+  { name: "Vitamin D3 + K2", amount: "20mg + 15mg", desc: "Immune function and bone density" },
+  { name: "Blue Agave Inulin", amount: "2g", desc: "Prebiotic fiber for gut health" },
+  { name: "Vitamin B Complex", amount: "100%+ DV", desc: "Energy metabolism and nervous system" },
+  { name: "Vitamin C", amount: "100%+ DV", desc: "Immune defense from Acerola fruit" },
+  { name: "Zinc", amount: "100% DV", desc: "Immune function and protein synthesis" },
 ]
 
 export function IngredientsSection() {
@@ -78,14 +87,13 @@ export function IngredientsSection() {
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
           <span className="inline-block font-mono text-xs tracking-widest text-primary uppercase mb-4">
-            The Tactical Difference
+            Stay in the Fight
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-            WHAT&apos;S <span className="text-gradient">INSIDE</span>
+            DISCOVER THE <span className="text-gradient">CLEAN INGREDIENTS</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Transparent labeling. No proprietary blends. You know exactly what you&apos;re putting 
-            in your body and why.
+            That keep you in the fight
           </p>
         </div>
 
@@ -128,11 +136,25 @@ export function IngredientsSection() {
           ))}
         </div>
 
+        {/* Additional Ingredients */}
+        <div className="mt-12">
+          <h3 className="text-center text-xl font-bold mb-8 text-foreground">Plus Essential Vitamins & Minerals</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {additionalIngredients.map((item) => (
+              <GlassCard key={item.name} variant="subtle" className="p-4 text-center">
+                <p className="font-semibold text-sm text-foreground mb-1">{item.name}</p>
+                <p className="text-xs text-primary font-mono mb-1">{item.amount}</p>
+                <p className="text-[10px] text-muted-foreground">{item.desc}</p>
+              </GlassCard>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <GlassCard variant="strong" className="inline-flex items-center gap-4 px-8 py-4">
             <div className="flex -space-x-2">
-              {["Informed Sport", "Made in USA", "NSF Certified"].map((cert, i) => (
+              {["Informed Sport", "Made in USA", "3rd Party"].map((cert, i) => (
                 <div 
                   key={cert}
                   className="w-10 h-10 rounded-full bg-muted border-2 border-card flex items-center justify-center"
@@ -145,8 +167,8 @@ export function IngredientsSection() {
               ))}
             </div>
             <div className="text-left">
-              <p className="text-sm font-semibold text-foreground">Third-Party Tested</p>
-              <p className="text-xs text-muted-foreground">Certified safe for professional athletes</p>
+              <p className="text-sm font-semibold text-foreground">Third-Party Certified</p>
+              <p className="text-xs text-muted-foreground">Informed Sport Certified</p>
             </div>
           </GlassCard>
         </div>

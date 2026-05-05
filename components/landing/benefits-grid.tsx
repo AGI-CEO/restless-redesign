@@ -1,38 +1,33 @@
 "use client"
 
 import { GlassCard } from "@/components/effects/glass-card"
-import { Shield, Brain, Zap, Target, Battery, Heart } from "lucide-react"
+import { Zap, Brain, Droplets, Activity, Leaf } from "lucide-react"
 
 const benefits = [
   {
     icon: Zap,
-    title: "SUSTAINED ENERGY",
-    description: "Clean, steady energy that lasts through your entire shift without the jitters or crash.",
+    title: "Jitter Free Energy",
+    description: "Clean, steady energy that lasts so you can get through demanding work, training, and life without the crash, jitters, or sugar-bomb feeling of traditional energy drinks.",
   },
   {
     icon: Brain,
-    title: "MENTAL CLARITY",
-    description: "Nootropic blend designed to sharpen focus and enhance cognitive performance under pressure.",
+    title: "Combats Brain Fog",
+    description: "L-Theanine paired with caffeine at a 2:1 ratio for zero brain fog and no jitters or crash.",
   },
   {
-    icon: Shield,
-    title: "IMMUNE SUPPORT",
-    description: "Essential vitamins and antioxidants to keep your defenses strong during high-stress operations.",
+    icon: Droplets,
+    title: "Superior Hydration",
+    description: "1,000mg electrolytes - Sodium, potassium, calcium, and magnesium blend formulated for sustained hydration in demanding environments.",
   },
   {
-    icon: Target,
-    title: "PRECISION FOCUS",
-    description: "Stay locked in when it matters most. Zero brain fog, maximum situational awareness.",
+    icon: Activity,
+    title: "Supports Recovery",
+    description: "Beetroot powder and ginger support cardiovascular efficiency, reduce muscle soreness, and accelerate recovery.",
   },
   {
-    icon: Battery,
-    title: "RAPID HYDRATION",
-    description: "1000mg electrolytes for optimal hydration and peak physical performance.",
-  },
-  {
-    icon: Heart,
-    title: "HEART-HEALTHY",
-    description: "Zero caffeine, zero sugar. Designed for those who demand performance without compromise.",
+    icon: Leaf,
+    title: "Nutritional Powerhouse",
+    description: "23 vitamins and minerals including full-spectrum B vitamins, Vitamin D3 + K2, and essential trace minerals.",
   },
 ]
 
@@ -49,15 +44,15 @@ export function BenefitsGrid() {
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-20">
           <span className="inline-block font-mono text-xs tracking-widest text-primary uppercase mb-4">
-            Why Choose Restless
+            Daily Benefits
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-            ENGINEERED FOR <span className="text-gradient">OPERATORS</span>
+            PERFORMANCE <span className="text-gradient">WITHOUT BURNOUT</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Every ingredient is selected with purpose. No fillers, no compromises. 
-            Just what you need to perform at your best.
+            Clean, steady energy that lasts so you can get through demanding work, training, and life without the crash, jitters, or sugar-bomb feeling of traditional energy drinks.
           </p>
+          <p className="text-sm text-primary mt-4 font-semibold">Starting at $1.86 / day</p>
         </div>
 
         {/* Benefits Grid */}

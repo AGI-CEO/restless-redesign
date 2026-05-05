@@ -39,25 +39,20 @@ export function HeroSection() {
             <GlassCard variant="subtle" className="inline-flex items-center gap-2 px-4 py-2 w-fit">
               <Zap className="w-4 h-4 text-primary" />
               <span className="text-xs font-mono font-medium tracking-widest text-primary uppercase">
-                Tactical Fuel for Long Shifts
+                Verified Reviews
               </span>
             </GlassCard>
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.1] text-balance">
-              <span className="text-foreground">PERFORMANCE</span>
+              <span className="text-foreground">STAY IN</span>
               <br />
-              <span className="text-foreground">ENERGY FOR</span>
-              <br />
-              <span className="text-gradient">THOSE WHO STAY</span>
-              <br />
-              <span className="text-gradient">IN THE FIGHT</span>
+              <span className="text-gradient">THE FIGHT</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg lg:text-xl text-muted-foreground max-w-lg leading-relaxed">
-              Premium energy blend with 1000mg electrolytes, nootropics, and essential vitamins. 
-              Sustained energy without the crash. Made for operators.
+              A better-for-you energy drink to attack the day without crashing
             </p>
 
             {/* CTAs */}
@@ -66,7 +61,7 @@ export function HeroSection() {
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider px-8 py-6 text-base group shimmer"
               >
-                SHOP NOW
+                SHOP 40% OFF
                 <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
@@ -74,7 +69,7 @@ export function HeroSection() {
                 variant="outline"
                 className="border-glass-border bg-glass hover:bg-glass-border/30 text-foreground font-semibold tracking-wide px-8 py-6 text-base"
               >
-                LEARN MORE
+                BENEFITS
               </Button>
             </div>
 

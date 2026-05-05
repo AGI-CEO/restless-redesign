@@ -8,39 +8,40 @@ import { cn } from "@/lib/utils"
 
 const testimonials = [
   {
-    name: "Mike R.",
-    role: "Law Enforcement, 12 Years",
-    quote: "Finally found something that keeps me sharp during double shifts without making me feel wired. Game changer for night duty.",
+    name: "K.W.",
+    product: "Performance Energy Blend",
+    quote: "I've tried a lot of different energy drinks over the years, and most of them come with the same problems—too much sugar, a jittery buzz, and the inevitable crash a couple of hours later. Restless is different.",
     rating: 5,
-    avatar: "MR",
   },
   {
-    name: "Sarah T.",
-    role: "ER Nurse, Night Shift",
-    quote: "No more coffee crashes at 3 AM. I stay focused and alert through my entire 12-hour shift. My patients deserve that.",
+    name: "M.B.",
+    product: "Performance Energy Blend",
+    quote: "RESTLESS is the cleanest, most effective energy blend I've tried. Smooth, jitter-free power, long-lasting focus, and zero crash. It mixes well, tastes great, and actually improves performance. As a Single dad of two and a Marine Corps Drill Instructor with a demanding lifestyle, this formula delivers exactly what it promises. A true game changer.",
     rating: 5,
-    avatar: "ST",
   },
   {
-    name: "James K.",
-    role: "Military Veteran, Personal Trainer",
-    quote: "Clean energy that actually works. No jitters, no crash. Just steady performance when I need it most.",
+    name: "M.",
+    product: "Performance Energy Blend",
+    quote: "Restless has absolutely changed the game for me. I've been powering through back to back 12 hour shifts for weeks now and this stuff is not just helpful, but it has been my daily backbone. Instead of chasing that quick spike of energy from sugary drinks that leaves me crashing later, Restless delivers steady, clean, crash free energy that actually lasts all day long.",
     rating: 5,
-    avatar: "JK",
   },
   {
-    name: "David M.",
-    role: "Fire Captain, 18 Years",
-    quote: "When lives are on the line, I need to be at 100%. This keeps my mind clear and body ready. Trusted by my entire crew.",
+    name: "D.R.",
+    product: "Performance Energy Blend",
+    quote: "The long days of running around in the high desert or diving in pacific are over for me, but my life's demands haven't let up. This supplement is perfect for when I need a 2 pm boost to finish the work day, get in the workout, and come home ready to play tag with the kids. No jitters, anxious energy, or affect on my sleep.",
     rating: 5,
-    avatar: "DM",
   },
   {
-    name: "Lisa P.",
-    role: "Emergency Dispatcher",
-    quote: "8 hours of non-stop calls requires unwavering focus. This is the only thing that works without the side effects.",
+    name: "Z.U.",
+    product: "Performance Energy Blend",
+    quote: "Restless kept me in the fight during a long nights work. For the first time I was able to get through the shift without feeling drowsy or crashing. The taste of Restless is also a plus because to me it tastes like a popsicle on a summer's day!",
     rating: 5,
-    avatar: "LP",
+  },
+  {
+    name: "P.P.",
+    product: "Performance Energy Blend",
+    quote: "Clean, steady energy without the crash or jitters. You can feel the difference compared to typical energy drink.",
+    rating: 5,
   },
 ]
 
@@ -79,10 +80,10 @@ export function TestimonialsCarousel() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block font-mono text-xs tracking-widest text-primary uppercase mb-4">
-            Trusted by Operators
+            4.98 Stars (149 Reviews)
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">
-            HEAR FROM <span className="text-gradient">THE FRONT LINES</span>
+            DON&apos;T TAKE OUR WORD FOR IT, <span className="text-gradient">TAKE THEIRS</span>
           </h2>
         </div>
 
@@ -96,12 +97,8 @@ export function TestimonialsCarousel() {
             </div>
 
             <div className="flex flex-col items-center text-center">
-              {/* Avatar */}
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 border-2 border-glass-border flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-foreground">
-                  {testimonials[activeIndex].avatar}
-                </span>
-              </div>
+              {/* Verified Badge */}
+              <span className="text-xs font-mono text-primary mb-4 uppercase tracking-wider">Verified</span>
 
               {/* Stars */}
               <div className="flex gap-1 mb-6">
@@ -121,7 +118,7 @@ export function TestimonialsCarousel() {
                   {testimonials[activeIndex].name}
                 </p>
                 <p className="text-sm text-muted-foreground font-mono">
-                  {testimonials[activeIndex].role}
+                  {testimonials[activeIndex].product}
                 </p>
               </div>
             </div>
@@ -171,10 +168,10 @@ export function TestimonialsCarousel() {
         {/* Stats Row */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mt-16 max-w-4xl mx-auto">
           {[
-            { value: "10K+", label: "Active Users" },
-            { value: "4.9", label: "Average Rating" },
-            { value: "98%", label: "Would Recommend" },
+            { value: "120+", label: "5-Star Reviews" },
+            { value: "4.98", label: "Average Rating" },
             { value: "100", label: "Day Guarantee" },
+            { value: "15%", label: "Off First Order" },
           ].map((stat) => (
             <GlassCard key={stat.label} variant="subtle" className="p-4 lg:p-6 text-center">
               <p className="text-2xl lg:text-3xl font-bold text-primary mb-1">{stat.value}</p>

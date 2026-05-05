@@ -6,10 +6,10 @@ import { Menu, X, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { label: "SHOP", href: "#shop" },
-  { label: "BENEFITS", href: "#benefits" },
-  { label: "INGREDIENTS", href: "#ingredients" },
-  { label: "REVIEWS", href: "#reviews" },
+  { label: "Daily Benefits", href: "#benefits" },
+  { label: "Us vs. Them", href: "#comparison" },
+  { label: "What's Inside", href: "#ingredients" },
+  { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
 ]
 

@@ -1,8 +1,17 @@
 "use client"
 
+import Image from "next/image"
 import { GlassCard } from "@/components/effects/glass-card"
-import { Shield, CheckCircle } from "lucide-react"
+import { Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+const certifications = [
+  "INFORMED SPORT CERTIFIED",
+  "MADE IN THE USA",
+  "TRANSPARENT LABELING",
+  "THIRD-PARTY LAB TESTED",
+  "VETERAN OWNED",
+]
 
 export function GuaranteeBanner() {
   return (
@@ -37,34 +46,28 @@ export function GuaranteeBanner() {
           </div>
 
           <div className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            {/* Shield Icon */}
+            {/* Product Image */}
             <div className="relative flex-shrink-0">
-              <div className="w-24 h-24 lg:w-32 lg:h-32 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center">
-                <Shield className="w-12 h-12 lg:w-16 lg:h-16 text-primary" />
+              <div className="relative w-32 h-40 lg:w-40 lg:h-52">
+                <Image
+                  src="/images/product-main.png"
+                  alt="RESTLESS Performance Energy Blend"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <div className="absolute inset-0 w-24 h-24 lg:w-32 lg:h-32 bg-primary/30 rounded-full blur-2xl" />
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl -z-10" />
             </div>
 
             {/* Content */}
             <div className="flex-1 text-center lg:text-left">
               <h3 className="text-2xl lg:text-3xl font-bold tracking-tight mb-4 text-foreground">
-                100-DAY <span className="text-primary">MONEY-BACK</span> GUARANTEE
+                If you don&apos;t feel it, <span className="text-primary">you don&apos;t pay for it</span>
               </h3>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6 max-w-2xl">
-                We&apos;re so confident in our formula that we offer a full 100-day guarantee. 
-                If you&apos;re not completely satisfied with your performance results, 
-                we&apos;ll refund every penny. No questions asked.
+                Restless will keep you in the fight—you&apos;ll feel stronger, sharper, and more resilient. 
+                If not, we&apos;ll refund your purchase in full. No return required. No questions.
               </p>
-              
-              {/* Features */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
-                {["Full Refund", "No Questions", "Free Returns"].map((feature) => (
-                  <div key={feature} className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-medium text-foreground">{feature}</span>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* CTA */}
@@ -73,7 +76,7 @@ export function GuaranteeBanner() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider px-8 py-6 text-base"
               >
-                TRY RISK-FREE
+                Claim 100-Day Guarantee
               </Button>
             </div>
           </div>
@@ -84,6 +87,20 @@ export function GuaranteeBanner() {
           <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-primary/40 rounded-bl-lg" />
           <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-primary/40 rounded-br-lg" />
         </GlassCard>
+
+        {/* Certifications Marquee */}
+        <div className="mt-12 overflow-hidden">
+          <div className="flex animate-marquee gap-8">
+            {[...certifications, ...certifications, ...certifications].map((cert, i) => (
+              <div key={i} className="flex items-center gap-3 flex-shrink-0">
+                <Shield className="w-4 h-4 text-primary" />
+                <span className="text-sm font-mono text-muted-foreground uppercase tracking-wider whitespace-nowrap">
+                  {cert}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
