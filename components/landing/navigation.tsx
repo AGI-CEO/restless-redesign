@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Menu, X, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -37,16 +38,15 @@ export function Navigation() {
       >
         <nav className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30 group-hover:border-primary/60 transition-colors">
-                <span className="font-mono text-primary font-bold text-lg">R</span>
-              </div>
-              <div className="absolute inset-0 rounded-lg bg-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-            <span className="font-bold text-xl tracking-tight text-foreground hidden sm:block">
-              RESTLESS
-            </span>
+          <a href="#" className="flex items-center group">
+            <Image
+              src="/images/restless-logo.svg"
+              alt="RESTLESS"
+              width={160}
+              height={40}
+              className="h-8 w-auto sm:h-10"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation */}
