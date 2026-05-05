@@ -13,7 +13,7 @@ export function HeroSection() {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        className="absolute inset-0 w-screen h-full object-contain object-left hidden md:block"
       >
         <source src="/videos/restless-hero-desktop.webm" type="video/webm" />
       </video>
