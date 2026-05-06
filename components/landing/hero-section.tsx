@@ -56,7 +56,7 @@ export function HeroSection() {
               ))}
             </div>
             <span className="text-[10px] font-semibold text-foreground">
-              4.9<span className="text-muted-foreground">/5</span>
+              4.9+<span className="text-muted-foreground">/5</span>
             </span>
             <span className="text-[10px] text-muted-foreground">Avg Reviews</span>
           </div>
