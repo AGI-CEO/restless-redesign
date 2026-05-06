@@ -58,44 +58,46 @@ export function HeroSection() {
           </h1>
         </GlassCard>
 
-        {/* Bottom Section - CTAs and trust badge in glass panel */}
-        <GlassCard 
-          variant="subtle" 
-          className="p-4"
-          style={{
-            background: 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%)',
-            boxShadow: '0 -4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)',
-          }}
-        >
-          {/* CTAs */}
-          <div className="flex flex-col gap-3">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider py-5 text-sm group shimmer w-full"
-            >
-              SHOP 40% OFF
-              <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-glass-border bg-glass/50 hover:bg-glass-border/30 text-foreground font-semibold tracking-wide py-5 text-sm w-full"
-            >
-              BENEFITS
-            </Button>
-          </div>
-
-          {/* Trust Badge */}
-          <div className="flex items-center gap-3 mt-4 pt-3 border-t border-glass-border">
-            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex-shrink-0">
-              <Shield className="w-4 h-4 text-primary" />
+        {/* Bottom Section - CTAs in glass panel */}
+        <div className="flex flex-col items-center gap-4">
+          <GlassCard 
+            variant="subtle" 
+            className="p-4 w-full"
+            style={{
+              background: 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%)',
+              boxShadow: '0 -4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)',
+            }}
+          >
+            {/* Subheadline */}
+            <p className="text-sm text-muted-foreground text-center mb-3">
+              A better-for-you energy drink to attack the day without crashing
+            </p>
+            
+            {/* CTAs */}
+            <div className="flex flex-col gap-3">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider py-5 text-sm group shimmer w-full"
+              >
+                SHOP 40% OFF
+                <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-glass-border bg-glass/50 hover:bg-glass-border/30 text-foreground font-semibold tracking-wide py-5 text-sm w-full"
+              >
+                BENEFITS
+              </Button>
             </div>
-            <div>
-              <p className="text-xs font-semibold text-foreground">100-Day Money-Back Guarantee</p>
-              <p className="text-[10px] text-muted-foreground">No questions asked. Try it risk-free.</p>
-            </div>
+          </GlassCard>
+          
+          {/* Scroll Indicator - Mobile */}
+          <div className="flex flex-col items-center gap-1 opacity-60">
+            <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Scroll</span>
+            <div className="w-1 h-1 bg-primary rounded-full animate-bounce" />
           </div>
-        </GlassCard>
+        </div>
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 pt-24 pb-16 relative z-10 hidden lg:block">
