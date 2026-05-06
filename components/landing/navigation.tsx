@@ -20,7 +20,7 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      setIsScrolled(window.scrollY > 50)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -28,34 +28,48 @@ export function Navigation() {
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          isScrolled
-            ? "glass-strong py-3"
-            : "bg-transparent py-5"
-        )}
-      >
-        <nav className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
+      {/* Desktop Navigation - Centered Animated Glass Container */}
+      <header className="fixed top-0 left-0 right-0 z-50 hidden lg:flex justify-center pt-4 pointer-events-none">
+        <nav
+          className={cn(
+            "pointer-events-auto flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-700 ease-out",
+            "backdrop-blur-xl border border-white/10",
+            "shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)]",
+            isScrolled
+              ? "w-[55%] bg-background/70"
+              : "w-[75%] bg-background/40"
+          )}
+          style={{
+            background: isScrolled 
+              ? 'linear-gradient(135deg, rgba(13,17,23,0.85) 0%, rgba(13,17,23,0.75) 100%)'
+              : 'linear-gradient(135deg, rgba(13,17,23,0.5) 0%, rgba(13,17,23,0.3) 100%)',
+          }}
+        >
           {/* Logo */}
-          <a href="#" className="flex items-center group">
+          <a href="#" className="flex items-center group flex-shrink-0">
             <Image
               src="/images/restless-logo.svg"
               alt="RESTLESS"
-              width={160}
-              height={40}
-              className="h-8 w-auto sm:h-10"
+              width={140}
+              height={35}
+              className={cn(
+                "transition-all duration-500",
+                isScrolled ? "h-7 w-auto" : "h-8 w-auto"
+              )}
               priority
             />
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Desktop Navigation Links */}
+          <div className="flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors tracking-wider group"
+                className={cn(
+                  "relative font-medium text-muted-foreground hover:text-foreground transition-all duration-300 tracking-wide group whitespace-nowrap",
+                  isScrolled ? "text-xs" : "text-sm"
+                )}
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
@@ -64,32 +78,73 @@ export function Navigation() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-shrink-0">
             <Button
               variant="ghost"
               size="icon"
-              className="relative text-muted-foreground hover:text-foreground hover:bg-glass-border/20"
+              className="relative text-muted-foreground hover:text-foreground hover:bg-white/5 h-9 w-9"
             >
-              <ShoppingBag className="w-5 h-5" />
+              <ShoppingBag className="w-4 h-4" />
               <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
                 0
               </span>
             </Button>
             
             <Button
-              className="hidden sm:flex bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide px-6"
+              className={cn(
+                "bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide transition-all duration-500",
+                isScrolled ? "px-4 py-2 text-xs h-8" : "px-5 py-2 text-sm h-9"
+              )}
             >
               SHOP NOW
+            </Button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile Navigation - Keep simple and full-width */}
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 lg:hidden transition-all duration-500",
+          isScrolled
+            ? "glass-strong py-3"
+            : "bg-transparent py-4"
+        )}
+      >
+        <nav className="container mx-auto px-4 flex items-center justify-between">
+          {/* Logo */}
+          <a href="#" className="flex items-center group">
+            <Image
+              src="/images/restless-logo.svg"
+              alt="RESTLESS"
+              width={120}
+              height={30}
+              className="h-7 w-auto"
+              priority
+            />
+          </a>
+
+          {/* Mobile CTA Buttons */}
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative text-muted-foreground hover:text-foreground hover:bg-glass-border/20 h-9 w-9"
+            >
+              <ShoppingBag className="w-5 h-5" />
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
+                0
+              </span>
             </Button>
 
             {/* Mobile Menu Toggle */}
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden text-foreground"
+              className="text-foreground h-9 w-9"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </Button>
           </div>
         </nav>
@@ -111,7 +166,7 @@ export function Navigation() {
         {/* Menu Panel */}
         <div
           className={cn(
-            "absolute top-20 left-4 right-4 glass-strong rounded-2xl p-6 transition-all duration-500",
+            "absolute top-16 left-4 right-4 glass-strong rounded-2xl p-6 transition-all duration-500",
             isMobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
           )}
         >
