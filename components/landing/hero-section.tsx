@@ -93,9 +93,11 @@ export function HeroSection() {
           </GlassCard>
           
           {/* Scroll Indicator - Mobile */}
-          <div className="flex flex-col items-center gap-1 opacity-60">
-            <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Scroll</span>
-            <div className="w-1 h-1 bg-primary rounded-full animate-bounce" />
+          <div className="flex flex-col items-center gap-2 pt-2">
+            <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">Scroll</span>
+            <div className="w-5 h-8 rounded-full border border-glass-border flex items-start justify-center p-1">
+              <div className="w-1 h-2 bg-primary rounded-full animate-bounce" />
+            </div>
           </div>
         </div>
       </div>
@@ -208,8 +210,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+      {/* Scroll Indicator - Desktop only */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 opacity-60">
         <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">Scroll</span>
         <div className="w-5 h-8 rounded-full border border-glass-border flex items-start justify-center p-1">
           <div className="w-1 h-2 bg-primary rounded-full animate-bounce" />
