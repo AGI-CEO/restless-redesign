@@ -31,60 +31,74 @@ export function HeroSection() {
       
       {/* Subtle overlay for contrast - only on right side for desktop */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-background/60 hidden lg:block" />
-      <div className="absolute inset-0 bg-background/40 lg:hidden" />
+      {/* Mobile: gradient at top and bottom only, leaving center clear */}
+      <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-background/80 to-transparent lg:hidden" />
+      <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background/90 to-transparent lg:hidden" />
 
-      <div className="container mx-auto px-4 lg:px-8 pt-24 pb-16 relative z-10">
-        {/* Mobile Layout - stacked content */}
-        <div className="flex flex-col gap-6 lg:hidden">
-          {/* Badge */}
-          <GlassCard variant="subtle" className="inline-flex items-center gap-2 px-4 py-2 w-fit">
-            <Zap className="w-4 h-4 text-primary" />
-            <span className="text-xs font-mono font-medium tracking-widest text-primary uppercase">
+      {/* Mobile Layout - split top/bottom with clear center */}
+      <div className="lg:hidden absolute inset-0 flex flex-col justify-between pt-20 pb-6 px-4 z-10">
+        {/* Top Section - Minimal headline in glass panel */}
+        <GlassCard 
+          variant="subtle" 
+          className="p-4 w-fit"
+          style={{
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%)',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)',
+          }}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <Zap className="w-3.5 h-3.5 text-primary" />
+            <span className="text-[10px] font-mono font-medium tracking-widest text-primary uppercase">
               Verified Reviews
             </span>
-          </GlassCard>
-
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] text-balance">
-            <span className="text-foreground">STAY IN</span>
-            <br />
+          </div>
+          <h1 className="text-3xl font-extrabold tracking-tight leading-none">
+            <span className="text-foreground">STAY IN </span>
             <span className="text-gradient">THE FIGHT</span>
           </h1>
+        </GlassCard>
 
-          {/* Subheadline */}
-          <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
-            A better-for-you energy drink to attack the day without crashing
-          </p>
-
+        {/* Bottom Section - CTAs and trust badge in glass panel */}
+        <GlassCard 
+          variant="subtle" 
+          className="p-4"
+          style={{
+            background: 'linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%)',
+            boxShadow: '0 -4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)',
+          }}
+        >
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-2">
+          <div className="flex flex-col gap-3">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider px-8 py-6 text-base group shimmer"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider py-5 text-sm group shimmer w-full"
             >
               SHOP 40% OFF
-              <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               size="lg" 
               variant="outline"
-              className="border-glass-border bg-glass hover:bg-glass-border/30 text-foreground font-semibold tracking-wide px-8 py-6 text-base"
+              className="border-glass-border bg-glass/50 hover:bg-glass-border/30 text-foreground font-semibold tracking-wide py-5 text-sm w-full"
             >
               BENEFITS
             </Button>
           </div>
 
           {/* Trust Badge */}
-          <div className="flex items-center gap-3 mt-4">
-            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 border border-primary/30">
-              <Shield className="w-5 h-5 text-primary" />
+          <div className="flex items-center gap-3 mt-4 pt-3 border-t border-glass-border">
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex-shrink-0">
+              <Shield className="w-4 h-4 text-primary" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-foreground">100-Day Money-Back Guarantee</p>
-              <p className="text-xs text-muted-foreground">No questions asked. Try it risk-free.</p>
+              <p className="text-xs font-semibold text-foreground">100-Day Money-Back Guarantee</p>
+              <p className="text-[10px] text-muted-foreground">No questions asked. Try it risk-free.</p>
             </div>
           </div>
-        </div>
+        </GlassCard>
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 pt-24 pb-16 relative z-10 hidden lg:block">
 
         {/* Desktop Layout - content in glass panel on right */}
         <div className="hidden lg:flex lg:justify-end">
