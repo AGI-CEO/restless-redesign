@@ -2,7 +2,7 @@
 
 import { GlassCard } from "@/components/effects/glass-card"
 import { Button } from "@/components/ui/button"
-import { Shield, ChevronRight, Zap } from "lucide-react"
+import { Shield, ChevronRight, Star } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -46,11 +46,19 @@ export function HeroSection() {
             boxShadow: '0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)',
           }}
         >
-          <div className="flex items-center gap-2 mb-2">
-            <Zap className="w-3.5 h-3.5 text-primary" />
-            <span className="text-[10px] font-mono font-medium tracking-widest text-primary uppercase">
-              Verified Reviews
+          <div className="flex items-center gap-2 mb-2 px-2.5 py-1 rounded-full bg-gradient-to-r from-primary/20 to-secondary/10 border border-primary/30 w-fit">
+            <div className="flex items-center gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star 
+                  key={i} 
+                  className={`w-3 h-3 ${i < 5 ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} 
+                />
+              ))}
+            </div>
+            <span className="text-[10px] font-semibold text-foreground">
+              4.9<span className="text-muted-foreground">/5</span>
             </span>
+            <span className="text-[10px] text-muted-foreground">Avg Reviews</span>
           </div>
           <h1 className="text-3xl font-extrabold tracking-tight leading-none">
             <span className="text-foreground">STAY IN </span>
@@ -120,11 +128,21 @@ export function HeroSection() {
             
             <div className="relative flex flex-col gap-6">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 w-fit rounded-full bg-primary/10 border border-primary/20">
-                <Zap className="w-3.5 h-3.5 text-primary" />
-                <span className="text-xs font-mono font-medium tracking-widest text-primary uppercase">
-                  Verified Reviews
-                </span>
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 w-fit rounded-full bg-gradient-to-r from-primary/20 via-primary/10 to-secondary/10 border border-primary/30 shadow-lg shadow-primary/10">
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star 
+                      key={i} 
+                      className={`w-4 h-4 ${i < 5 ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground'}`} 
+                    />
+                  ))}
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-sm font-bold text-foreground">
+                    4.9<span className="text-muted-foreground font-normal">/5</span>
+                  </span>
+                  <span className="text-xs text-muted-foreground">Avg Reviews</span>
+                </div>
               </div>
 
               {/* Headline */}
