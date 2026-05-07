@@ -17,8 +17,20 @@ const certifications = [
 export function GuaranteeBanner() {
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
+      {/* Full-bleed background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/tactical-jungle-path.jpg"
+          alt="Tactical gear in jungle environment"
+          fill
+          className="object-cover"
+        />
+        {/* Heavy overlay for readability */}
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90" />
+        {/* Subtle green tint to match the image */}
+        <div className="absolute inset-0 bg-primary/5" />
+      </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <GlassCard 
