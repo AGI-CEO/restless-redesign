@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LiquidGlassFilter } from '@/components/effects/liquid-glass-filter'
+import { TacticalRadioProvider } from '@/components/landing/tactical-radio-provider'
+import { TacticalRadioFab } from '@/components/landing/tactical-radio-fab'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -45,9 +47,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-background">
       <body className="font-sans antialiased min-h-screen">
-        <LiquidGlassFilter />
-        {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        <TacticalRadioProvider>
+          <LiquidGlassFilter />
+          {children}
+          <TacticalRadioFab />
+          {process.env.NODE_ENV === 'production' && <Analytics />}
+        </TacticalRadioProvider>
       </body>
     </html>
   )
