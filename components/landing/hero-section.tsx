@@ -2,6 +2,7 @@
 
 import { GlassCard } from "@/components/effects/glass-card"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { Shield, ChevronRight, Star } from "lucide-react"
 
 export function HeroSection() {
@@ -84,11 +85,14 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-col gap-3">
               <Button 
+                asChild
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider py-5 text-sm group shimmer w-full"
               >
-                SHOP 40% OFF
-                <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <Link href="https://restlessco.store/products/energy-blend?sca_ref=8594510.rAV4rrFMuXz">
+                  SHOP 40% OFF
+                  <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </Button>
               <Button 
                 size="lg" 
@@ -178,11 +182,14 @@ export function HeroSection() {
               {/* CTAs */}
               <div className="flex gap-4">
                 <Button 
+                  asChild
                   size="lg" 
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider px-8 py-6 text-base group shimmer"
                 >
-                  SHOP 40% OFF
-                  <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <Link href="https://restlessco.store/products/energy-blend?sca_ref=8594510.rAV4rrFMuXz">
+                    SHOP 40% OFF
+                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
                 <Button 
                   size="lg" 

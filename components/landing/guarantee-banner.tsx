@@ -4,6 +4,7 @@ import Image from "next/image"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const certifications = [
   "INFORMED SPORT CERTIFIED",
@@ -73,10 +74,13 @@ export function GuaranteeBanner() {
             {/* CTA */}
             <div className="flex-shrink-0">
               <Button 
+                asChild
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider px-8 py-6 text-base"
               >
-                Claim 100-Day Guarantee
+                <Link href="https://restlessco.store/products/energy-blend?sca_ref=8594510.rAV4rrFMuXz">
+                  Claim 100-Day Guarantee
+                </Link>
               </Button>
             </div>
           </div>

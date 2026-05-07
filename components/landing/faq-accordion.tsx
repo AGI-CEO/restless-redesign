@@ -4,6 +4,7 @@ import { useState } from "react"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Plus, Minus } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 
 const faqs = [
@@ -102,10 +103,13 @@ export function FAQAccordion() {
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <Button 
+            asChild
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider px-8 py-6 text-base"
           >
-            Try Now
+            <Link href="https://restlessco.store/products/energy-blend?sca_ref=8594510.rAV4rrFMuXz">
+              Try Now
+            </Link>
           </Button>
         </div>
       </div>

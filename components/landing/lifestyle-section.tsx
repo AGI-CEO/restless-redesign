@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { GlassCard } from "@/components/effects/glass-card"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { ChevronRight, Star } from "lucide-react"
 
 export function LifestyleSection() {
@@ -121,8 +122,10 @@ export function LifestyleSection() {
             <p className="text-sm text-muted-foreground mb-6">
               Join the operators who refuse to compromise on performance.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider">
-              Shop Now <ChevronRight className="w-4 h-4 ml-1" />
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wider">
+              <Link href="https://restlessco.store/products/energy-blend?sca_ref=8594510.rAV4rrFMuXz">
+                Shop Now <ChevronRight className="w-4 h-4 ml-1" />
+              </Link>
             </Button>
           </GlassCard>
         </div>

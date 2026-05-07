@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Menu, X, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -91,12 +92,15 @@ export function Navigation() {
             </Button>
             
             <Button
+              asChild
               className={cn(
                 "bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide transition-all duration-500",
                 isScrolled ? "px-4 py-2 text-xs h-8" : "px-5 py-2 text-sm h-9"
               )}
             >
-              SHOP NOW
+              <Link href="https://restlessco.store/products/energy-blend?sca_ref=8594510.rAV4rrFMuXz">
+                SHOP NOW
+              </Link>
             </Button>
           </div>
         </nav>
@@ -181,8 +185,10 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
-            <Button className="mt-4 w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide">
-              SHOP NOW
+            <Button asChild className="mt-4 w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide">
+              <Link href="https://restlessco.store/products/energy-blend?sca_ref=8594510.rAV4rrFMuXz">
+                SHOP NOW
+              </Link>
             </Button>
           </div>
         </div>
